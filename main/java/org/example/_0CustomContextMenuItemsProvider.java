@@ -97,6 +97,10 @@ public class _0CustomContextMenuItemsProvider implements ContextMenuItemsProvide
                 String matched = matcher.group(1);
                 if (!matched.contains("http")) {
                     links.add(matcher.group(1));
+                } else {
+                    if (matched.contains(this.baseRequest.url())) {
+                        links.add(matcher.group(1));
+                    }
                 }
 
 
